@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpp-calculator
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cpp-calculator
+  template:
+    metadata:
+      labels:
+        app: cpp-calculator
+    spec:
+      containers:
+        - name: cpp-calculator
+          image: aymanelkilany/cpp-calculator:latest
+          stdin: true
+          tty: true
